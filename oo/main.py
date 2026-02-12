@@ -1,33 +1,39 @@
-from cliente import Cliente
-from endereco import Endereco
+from veiculo import Veiculo
+from pessoaFisica import PessoaFisica
+from pessoaJuridica import PessoaJuridica
 
 def main():
-    print("Inicializando Sistema")
-    
-    #Cliente N°1
-    endereco = Endereco( "Av.Maranhão, 111 / ", "São joão / ", "Teresina / ", "PI")
-    endereco2 = Endereco( "Av.São Luis, 111 / ", "São Sebastião / ", "Codó / ", "MA")
-    
-    cliente = Cliente('José', "Francisco")
-    cliente.addEndereco(endereco)
-    cliente.addEndereco(endereco2)
-   
-    #Cliente N°2
-    print(f'Cliente: \nNome: {cliente.nomeCompleto()} ')
-    print(f'Endereços: {cliente.visualizarEnderecos()}')
+    print('Inicializando sistema!')
+    list = []
 
-    endereco3 = Endereco( "Av.São Paulo, 666 / ", "São Pedro / ", "Teresina / ", "PI")
-    endereco4 = Endereco( "Av.Barão de Gurgueia, 999 / ", "Vermelha / ", "Codó / ", "MA")
-    
+    jose = PessoaFisica('José Henrique', '86 9.999.999', 'Rua dos Ipes', '666.666.666-66')
+    senai = PessoaJuridica('Senai', '86 9.666.666', 'Teresina Shopping', '12323434556')
 
-    cliente2 = Cliente('Marco', "Antonio")
-    cliente2.addEndereco(endereco3)
-    cliente2.addEndereco(endereco4)
-   
-    print(f'Cliente: \nNome: {cliente2.nomeCompleto()} ')
-    print(f'Endereços: {cliente2.visualizarEnderecos()}')
+    list.append(jose)
+    list.append(senai)
 
-    
+    for p in list:
+        print(f'{p.exibir_dados()}')
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+def main():
+    print('Inicializando sistema!')
+    lista = []
+
+    carroByd = Veiculo(2026, 'BYD', 4)
+    motoHonda = Veiculo(2026, 'HONDA', 2)
+
+    lista.append(carroByd)
+    lista.append(motoHonda)
+
+    for v in lista:
+        print(f'{v.marca}')
 
 if __name__ == "__main__":
     main()
